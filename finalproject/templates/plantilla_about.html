@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="gradient" style="width:750px; position:relative; right: 20%;">
+  <a name="fluidity"></a>
+  <h1>About</h1></br>
+      <ul>
+        <h2><strong>Funcionamiento práctica: </strong></h2></br>
+        <h2> Recurso "/": Se muestra un listado con los 5 aparcamientos con más comentarios y otro listado con las páginas personales disponibles.</h2> </br>
+        <h2> Recurso "/aparcamientos": Se muestran los aparcamientos del distrito deseado. </h2> </br>
+        <h2> Recurso "/aparcamientos/id": Se muestra la página concreta de un aparcamiento en la que encontramos la informacion de dicho lugar(descripcion, longitud, latitud..).</h2> </br>
+        <h2> Recurso "/usuario": Se muestra la pagina de un usuario en la que se muestran los aparcamientos seleccionados. </h2> </br>
+        <h2> Recurso "/mostrarXml/usuario": Se muestra el canal XML de la pagina de un usuario.</h2> </br>
+        <h2> Recurso "/about": Se muestra el funcionamiento de las urls. </h2> </br>
+    </ul>
+</div>
+
+{% endblock content %}

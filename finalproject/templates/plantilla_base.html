@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="gradient">
+  <a name="fluidity"></a>
+  <h1>Los aparcamientos de Madrid más comentados: </h1>
+  <ul class = "indexlist">
+    {% for aparcamiento in aparcamientos %}
+      <div class="5aparcamientosCom">
+        <li>
+          <item>
+            <div class="aparcamiento">
+              <a href="{{aparcamiento.url}}"><h2>{{aparcamiento.nombre|striptags|safe}}</h2></a>
+              <p><strong>Dirección:  </strong>{{aparcamiento.direccion|striptags|safe}}</p>
+            </div>
+            <blockquote class="go">
+              <a href="/aparcamientos/{{aparcamiento.id}}"><strong> Mas información</strong></a>
+            </blockquote>
+          </item>
+        </li></br><hr class="separator">
+      </div>
+    {% empty %}
+      <p> No hay aparcamientos con comentarios </p>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock content %}
+
+
+{% block left %}
+
+<div class="width100 floatLeft leftColumn">
+  <h2>Páginas personales:</h2>
+  <ul class="sideMenu">
+    <li class="here">
+      {% for usuario,titulo in usuarios %}
+      <ul>
+        <li><a href="{{usuario}}"><h2>{{titulo|striptags|safe}}</h2></a>>
+      </ul>
+      {% endfor %}
+    </li>
+    <!--<li><a href="http://www.esmadrid.org" title="Goto EsMadrid">Go to EsMadrid</a></li>-->
+  </ul>
+</div>
+
+{% endblock left %}

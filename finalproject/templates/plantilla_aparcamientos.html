@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="gradient" style="width:750px; position:relative; right: 20%;">
+  <a name="fluidity"></a>
+  <h1>Filtramos aparcamientos por distrito</h1></br>
+  <form action="/filtrarAparcamientos" method="POST" style="position:relative; left: 25%;">{% csrf_token %}
+    <!--<select id="categoria" name="categoria">
+      <option value="todos" selected="selected">Todos</option>
+      <option value="Distrito">Distrito</option>
+      <!<option value="Accesibilidad">Accesibilidad</option>
+    </select>-->
+    <select id="distrito" name="distrito">
+      <option value="todos" selected="selected">- Todos -</option>
+      <optgroup label="Distritos">
+        <option value="CENTRO">CENTRO</option>
+        <option value="CHAMARTIN">CHAMARTIN</option>
+        <option value="TETUAN">TETUAN</option>
+        <option value="MONCLOA-ARAVACA">MONCLOA-ARAVACA</option>
+        <option value="RETIRO">RETIRO</option>
+        <option value="SALAMANCA">SALAMANCA</option>
+        <option value="MORATALAZ">MORATALAZ</option>
+        <option value="CHAMBERI">CHAMBERI</option>
+        <option value="SAN BLAS-CANILLEJAS">SAN BLAS-CANILLEJAS</option>
+        <option value="CIUDAD LINEAL">CIUDAD LINEAL</option>
+        <option value="FUENCARRAL-EL PARDO">FUENCARRAL-EL PARDO</option>
+        <option value="ARGANZUELA">ARGANZUELA</option>
+        <option value="VILLA DE VALLECAS">VILLA DE VALLECAS</option>
+        <option value="LATINA">LATINA</option>
+        <option value="HORTALEZA">HORTALEZA</option>
+        <option value="PUENTE DE VALLECAS">PUENTE DE VALLECAS</option>
+        <option value="CARABANCHEL">CARABANCHEL</option>
+        <option value="VILLAVERDE">VILLAVERDE</option>
+        <option value="BARAJAS">BARAJAS</option>
+        <option value="VICALVARO">VICALVARO</option>
+        <option value="USERA">USERA</option>
+      </optgroup>
+    </select>
+    <input type="submit" value="Filtrar" style="background-color: #006666;
+      border: 1px solid #003333;
+      border-radius: 5px;
+      box-shadow: 0px 0px 0px 1px rgba(255, 115, 100, 0.4) inset, 0px 1px 3px #333;
+      color: #FFF;
+      font: bold 20px/1 "helvetica neue",helvetica,arial,sans-serif;
+      padding: 12px 0px 14px;
+      text-align: center;
+      text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+      width: 150px;"/>
+  </form></br>
+  <ul class = "indexlist">
+  {% if aparcamientos == empty %}
+    {% for aparcamiento in todos %}
+      <div class="10alojamientosCom">
+          <item>
+            <div class="alojamiento" style="width:800px;">
+              <a ><h2>{{aparcamiento.nombre|striptags|safe}}</h2></a> <!-- href="{{aparcamiento.url}}" -->
+            </div>
+            <blockquote class="go">
+              <a href="/aparcamientos/{{aparcamiento.id}}"><strong>Pagina de este aparcamiento</strong></a>
+            </blockquote>
+          </item>
+        </br><hr class="separator" style="width:800px;">
+    </div>
+    {% endfor %}
+  {% else %}
+    {% for aparcamiento in aparcamientos %}
+      <div class="10alojamientosCom">
+          <item>
+            <div class="alojamiento" style="width:800px">
+              <a ><h2>{{aparcamiento.nombre|striptags|safe}}</h2></a>
+            </div>
+            <blockquote class="go">
+              <a href="/aparcamientos/{{aparcamiento.id}}"><strong>Pagina de este aparcamiento</strong></a>
+            </blockquote>
+          </item>
+        </br><hr class="separator" style="width:800px;">
+    </div>
+    {% empty %}
+      <p> No hay aparcamientos en este distrito </p>
+    {% endfor %}
+  {% endif %}
+  </ul>
+</div>
+
+{% endblock content %}

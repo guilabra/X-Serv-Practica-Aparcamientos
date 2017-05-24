@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<parkinglist>
+	<titulo>
+		Canal XML de {{user.username}}
+	</titulo>
+    {% for seleccionado in seleccionados %}
+    	<parking>
+    		<nombre>{{seleccionado.aparcamiento_id.nombre}}</nombre>
+    		<descripcion>{{seleccionado.aparcamiento_id.descripcion}}</descripcion>
+    		<accesibilidad>{{seleccionado.aparcamiento_id.accesibilidad}}</accesibilidad>
+    		<enlace>{{seleccionado.aparcamiento_id.url}}</enlace>
+    		<localizacion>
+	    		<direccion>{{seleccionado.aparcamiento_id.direccion}}</direccion>
+	    		<barrio>{{seleccionado.aparcamiento_id.barrio}}</barrio>
+	    		<distrito>{{seleccionado.aparcamiento_id.distrito}}</distrito>
+    		</localizacion>
+    		<geoData>
+    			<coordenadas>{{seleccionado.aparcamiento_id.coordenadas}}</coordenadas>
+    		</geoData>
+    	</parking>
+    {% endfor %}
+</parkinglist>
