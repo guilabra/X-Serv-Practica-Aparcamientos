@@ -6,11 +6,6 @@
   <a name="fluidity"></a>
   <h1>Filtramos aparcamientos por distrito</h1></br>
   <form action="/filtrarAparcamientos" method="POST" style="position:relative; left: 25%;">{% csrf_token %}
-    <!--<select id="categoria" name="categoria">
-      <option value="todos" selected="selected">Todos</option>
-      <option value="Distrito">Distrito</option>
-      <!<option value="Accesibilidad">Accesibilidad</option>
-    </select>-->
     <select id="distrito" name="distrito">
       <option value="todos" selected="selected">- Todos -</option>
       <optgroup label="Distritos">

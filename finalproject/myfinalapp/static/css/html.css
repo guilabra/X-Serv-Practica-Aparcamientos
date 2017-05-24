@@ -1,9 +1,3 @@
-/**************************************************************
-   AUTHOR:  Pat Heard (fullahead.org)
-   DATE:    2006.03.19
-   PURPOSE: Styles the html elements
- **************************************************************/
-
 html {
   height: 100%;
 }
@@ -110,10 +104,6 @@ ol span {
   color: #EEE;
 }
 
-ul {
-  list-style-image: url(../images/bg/bullet.gif);
-}
-
 del {
   color: #AAA;
 }
@@ -210,18 +200,6 @@ blockquote {
   background-color: gray;
   background-repeat: no-repeat;
   background-position: 5px 50%;
-}
-
-blockquote.exclamation {
-  background-image: url(../images/icons/exclamation.gif);
-}
-
-blockquote.stop {
-  background-image: url(../images/icons/stop.gif);
-}
-
-blockquote.go {
-  background-image: url(../images/icons/go.gif);
 }
 
 

@@ -67,38 +67,7 @@
     {% empty %}
       <p> No hay aparcamientos seleccionados </p>
     {% endfor %}
-  <!--
-    <h2 style="position:relative; left: 10%;">Quieres cambiarle el aspecto a la web?</h2></br>
-    <form action="/cambiarcss" method="POST" style="position:relative; left: 15%;">{% csrf_token %}
-      <select id="color" name="color">
-        <option value="" selected="selected">- color -</option>
-        <option value="#20B2AA">Turquesa (por defecto)</option>
-        <option value="#FFD700">Amarillo</option>
-        <option value="#FF0000">Rojo</option>
-        <option value="#F08080">Rosa</option>
-        <option value="#191970">Azul</option>
-        <option value="#006400">Verde</option>
-        <option value="#000000">Negro</option>
-      </select>
-      <select id="tam" name="tam">
-        <option value="todos" selected="selected">- letra -</option>
-        <option value="0.0">Defecto</option>
-        <option value="1.5">+1.5 puntos</option>
-        <option value="1">+1 punto</option>
-        <option value="0.5">+0.5 puntos</option>
-      </select>
-      <input type="submit" value="Filtrar" style="background-color: #006666;
-        border: 1px solid #003333;
-        border-radius: 5px;
-        box-shadow: 0px 0px 0px 1px rgba(255, 115, 100, 0.4) inset, 0px 1px 3px #333;
-        color: #FFF;
-        font: bold 20px/1 "helvetica neue",helvetica,arial,sans-serif;
-        padding: 12px 0px 14px;
-        text-align: center;
-        text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
-        width: 150px;"/>
-    </form></br>
--->
+  
   </ul>
   <a href="/mostrarXml/{{usuario}}"><h2><strong> Canal XML de este usuario </strong></h2></a>
 </div>
